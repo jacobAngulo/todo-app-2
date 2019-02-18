@@ -59,7 +59,7 @@ class App extends React.Component {
         <TodoForm
         addTask={this.addTask}
         />
-        <button onClick={this.handleClearCompleted}>clear completed</button>
+        <button className='clear-btn' onClick={this.handleClearCompleted}>clear completed</button>
       </div>
     );
   }

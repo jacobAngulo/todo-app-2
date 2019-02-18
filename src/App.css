@@ -47,10 +47,42 @@ table {
 	border-spacing: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  border-radius: 5px;
+  padding: 25px;
+  background: olivedrab;
+  margin: 50px auto 50px;
+  width: 500px;
+}
+
+.clear-btn {
+  width: 100%;
+}
+
+.todo-form {
+  width: 100%;
+  background: yellow;
+}
+
+.todo-form input {
+  width: 50%;
+}
+
+.todo-form button {
+  width: 50%;
+}
+
 .todo {
+  width: fit-content;
+  cursor: pointer;
   font-size: 20px;
+  margin-bottom: 20px; 
 }
 
 .completed {
-  background: red;
+  background: tomato;
 }
