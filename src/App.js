@@ -52,14 +52,22 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <TodoList
-          toggleCompleted = {this.toggleCompleted}
-          todos = {this.state.todos}
-        />
-        <TodoForm
-        addTask={this.addTask}
-        />
-        <button className='clear-btn' onClick={this.handleClearCompleted}>clear completed</button>
+        <header>
+          <h1>Todos</h1>
+        </header>
+        <section className='page'>
+          {/* <div className='side-bar'></div> */}
+          <div className='main-content'>
+            <TodoList
+              toggleCompleted = {this.toggleCompleted}
+              todos = {this.state.todos}
+            />
+          <TodoForm
+            addTask={this.addTask}
+          />
+          <button className='clear-btn' onClick={this.handleClearCompleted}>clear completed</button>
+          </div>
+        </section>
       </div>
     );
   }
