@@ -12,7 +12,10 @@ const TodoForm = ({ addTodo }) => {
   };
 
   return (
-    <form className="todo-form" onSubmit={handleSubmit}>
+    <form
+      className="todo-form"
+      onSubmit={todoInput ? handleSubmit : e => e.preventDefault()}
+    >
       <input
         type="text"
         name="input"
