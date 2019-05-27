@@ -1,14 +1,23 @@
-import React from 'react'
+import React from "react";
+import { connect } from "react-redux";
+import { toggleTodoCompletedness, deleteTodo } from "../actions";
 
-function Todo(props) {
-    return (
-        <li
-        className={`todo${props.todo.completed ? ' completed' : ''}`}
-        onClick={() => props.toggleCompleted(props.todo.id)}
-        key={props.todo.id}
-        >{props.todo.task}
-        </li>
-    )
+function Todo({ todo, toggleTodoCompletedness, deleteTodo }) {
+  return (
+    <li
+      className={`todo${todo.completed ? " completed" : ""}`}
+      onClick={() => toggleTodoCompletedness(todo.id)}
+      key={todo.id}
+    >
+      <button className="delete-todo-btn" onClick={() => deleteTodo(todo.id)}>
+        x
+      </button>
+      {todo.task}
+    </li>
+  );
 }
 
-export default Todo
+export default connect(
+  null,
+  { toggleTodoCompletedness, deleteTodo }
+)(Todo);

@@ -3,48 +3,129 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 * {
@@ -52,7 +133,7 @@ table {
 }
 
 html {
-  background: rosybrown !important;
+  background: rosybrown;
 }
 
 .App {
@@ -93,16 +174,17 @@ header h1 {
 
 .todo-form {
   width: 100%;
-  background: yellow;
+  line-height: 100%;
+  /* background: yellow; */
 }
 
 .todo-form input {
-  width: 50%;
+  width: 49%;
   height: 35px;
 }
 
 .todo-form button {
-  width: 50%;
+  width: 49%;
   height: 35px;
 }
 
@@ -112,10 +194,43 @@ header h1 {
   cursor: pointer;
   font-size: 20px;
   padding-top: 7.5px;
-  padding-bottom: 7.5px;  
+  padding-bottom: 7.5px;
   border-bottom: 1px solid lightskyblue;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+button {
+  /* color: red; */
+  background: transparent;
+  /* padding: 0px;
+  margin: 0px;
+  height: 0px;
+  width: 0px; */
+  border: none;
+  font-size: 20px;
+}
+
+input {
+  border: none;
+  background: whitesmoke;
+  border-bottom: 1px dashed black;
+  margin: -5px 0 5px 5px;
+}
+
+.clear-btn {
+  border-top: 1px solid lightskyblue;
+}
+
+.delete-todo-btn {
+  /* height: 5px;
+  width: 5px; */
+  align-self: center;
+  justify-self: center;
+  margin: 0 50px 0 -75px;
+  /* padding: -1px 6px 7px 9px; */
+  border: 1px solid black;
+  border-radius: 50%;
 }

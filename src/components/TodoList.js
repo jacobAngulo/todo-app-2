@@ -1,20 +1,25 @@
-import React from 'react';
-import Todo from './Todo'
+import React from "react";
+import Todo from "./Todo";
+import { connect } from "react-redux";
 
-function TodoList(props) {
-    const sortedList = props.todos.sort((a, b) => a.completed - b.completed);
-    return (
-        <ul>
-            {sortedList.map(todo => {
-                return (
-                    <Todo
-                        toggleCompleted = {props.toggleCompleted}
-                        todo = {todo}
-                    />
-                )
-            })}
-        </ul>
-    )
+function TodoList({ todos }) {
+  const sortedList = todos.sort((a, b) => a.completed - b.completed);
+  return (
+    <ul>
+      {sortedList.map(todo => {
+        return <Todo todo={todo} />;
+      })}
+    </ul>
+  );
 }
 
-export default TodoList
+const mapStateToProps = state => {
+  return {
+    todos: state.todos
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(TodoList);

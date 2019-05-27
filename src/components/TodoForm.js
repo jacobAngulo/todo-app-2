@@ -1,36 +1,30 @@
-import React from 'react'
+import React, { useState } from "react";
+import { addTodo } from "../actions";
+import { connect } from "react-redux";
 
-class TodoForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            input: ''
-        }
-    }
+const TodoForm = ({ addTodo }) => {
+  const [todoInput, setTodoInput] = useState("try me!");
 
-    handleChanges = e => {
-        this.setState({ [e.target.name]: e.target.value });
-    }
+  const handleSubmit = e => {
+    e.preventDefault();
+    addTodo(todoInput);
+    setTodoInput("");
+  };
 
-    handleSubmit = e => {
-        e.preventDefault()
-        this.props.addTask(e, this.state.input);
-        this.setState({ input: '' })
-    }
+  return (
+    <form className="todo-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="input"
+        value={todoInput}
+        onChange={e => setTodoInput(e.target.value)}
+      />
+      <button>Add</button>
+    </form>
+  );
+};
 
-    render() {
-        return (
-            <form className='todo-form' onSubmit={this.handleSubmit}>
-                <input 
-                    type='text'
-                    name='input'
-                    value={this.state.input}
-                    onChange={this.handleChanges} 
-                />
-                <button>Add</button>
-            </form>
-        )
-    }
-}
-
-export default TodoForm
+export default connect(
+  null,
+  { addTodo }
+)(TodoForm);
