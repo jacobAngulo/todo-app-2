@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { toggleTodoCompletedness, deleteTodo } from "../actions";
 
-function Todo({ todo, toggleTodoCompletedness, deleteTodo }) {
+const Todo = ({ todo, toggleTodoCompletedness, deleteTodo }) => {
   return (
     <li
       className={`todo${todo.completed ? " completed" : ""}`}
@@ -15,7 +15,7 @@ function Todo({ todo, toggleTodoCompletedness, deleteTodo }) {
       {todo.task}
     </li>
   );
-}
+};
 
 export default connect(
   null,

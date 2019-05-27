@@ -2,7 +2,7 @@ import React from "react";
 import Todo from "./Todo";
 import { connect } from "react-redux";
 
-function TodoList({ todos }) {
+const TodoList = ({ todos }) => {
   const sortedList = todos.sort((a, b) => a.completed - b.completed);
   return (
     <ul>
@@ -11,7 +11,7 @@ function TodoList({ todos }) {
       })}
     </ul>
   );
-}
+};
 
 const mapStateToProps = state => {
   return {
